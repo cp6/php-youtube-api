@@ -1,0 +1,22 @@
+{
+  "name": "corbpie/yt-api",
+  "description": "A PHP YouTube API wrapper",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Corbpie\\YouTubeApiClass\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "corbpie",
+      "email": "contact@corbpie.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=8.0",
+    "ext-curl": "*"
+  }
+}
