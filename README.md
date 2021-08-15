@@ -5,7 +5,7 @@ Just a PHP YouTube API wrapper for searching videos and getting channel/video/pl
 ## Usage
 
 ```shell
-composer require corbpie/video-probe
+composer require corbpie/php-youtube-api
 ```
 
 Put your YouTube API key line 9 ```src/YTAPI.php```
