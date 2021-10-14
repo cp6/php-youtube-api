@@ -1,6 +1,6 @@
 # PHP YouTube API wrapper
 
-Just a PHP YouTube API wrapper for searching videos and getting channel/video/playlist data.
+Just a PHP YouTube API wrapper for searching videos and getting channel/video/playlist data and information.
 
 ## Usage
 
@@ -8,7 +8,7 @@ Just a PHP YouTube API wrapper for searching videos and getting channel/video/pl
 composer require corbpie/yt-api
 ```
 
-Put your YouTube API key line 9 ```src/YTAPI.php```
+Put your YouTube API key at line 9 of ```src/YTAPI.php```
 
 Use the class with:
 
@@ -28,7 +28,7 @@ This will gets 25 videos from the NBA channel with the query "Jordan" sorted by 
 
 ```php
 $yt->setChannelId('UCWJ2lWNubArHWmf3FIHbfcQ');
-$yt->getChannelVideosSearch('Jordan', 'viewCount', 25);
+$yt->getVideoSearch('Jordan', 'viewCount', 25);
 ```
 
 **Search everywhere**
@@ -36,7 +36,7 @@ $yt->getChannelVideosSearch('Jordan', 'viewCount', 25);
 Just dont set channelId to search all of YouTube (Not a channel specific)
 
 ```php
-$yt->getChannelVideosSearch('Jordan', 'viewCount', 25);
+$yt->getVideoSearch('Jordan', 'viewCount', 25);
 ```
 
 **Get latest videos from a channel**
@@ -45,7 +45,7 @@ Get 25 videos sorted by date published (recent -> oldest)
 
 ```php
 $yt->setChannelId('UCWJ2lWNubArHWmf3FIHbfcQ');
-$yt->getChannelVideosSearch('', 'date', 25);
+$yt->getVideoSearch('', 'date', 25);
 ```
 
 ## Video information
