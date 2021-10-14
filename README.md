@@ -58,6 +58,8 @@ $yt->getVideoSearch('', 'date', 25);
 * videoCount
 * viewCount
 
+```results``` amount is capped at max 50.
+
 ## Video information
 
 ```php
