@@ -48,6 +48,16 @@ $yt->setChannelId('UCWJ2lWNubArHWmf3FIHbfcQ');
 $yt->getVideoSearch('', 'date', 25);
 ```
 
+
+**Order types:**
+
+* date
+* rating
+* relevance
+* title
+* videoCount
+* viewCount
+
 ## Video information
 
 ```php
