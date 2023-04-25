@@ -54,7 +54,7 @@ class YTAPI
 
     public function getVideoSearch(string $query = '', string $date_before = '', string $date_after = '', int $results = 50, string $order = 'viewCount', string $page_token = ''): array
     {
-        ($this->channel_id !== '' || is_null($this->channel_id)) ? $ch = "channelId=" . $this->channel_id : $ch = "";
+        ($this->channel_id !== '') ? $ch = "channelId=" . $this->channel_id : $ch = "";
         ($page_token !== '') ? $pt = "&pageToken=" . $page_token : $pt = "";
         ($query !== '') ? $q = "&q=" . $query : $q = "";
         ($date_before !== '') ? $dt_b = "&publishedBefore=" . $date_before : $dt_b = "";
@@ -65,13 +65,13 @@ class YTAPI
     public function searchQuickLookArray(): array
     {
         $this->verifySearchDataSet();
-        $arr = array();
+        $arr = [];
         foreach ($this->search_data['items'] as $v) {
-            $arr[] = array(
+            $arr[] = [
                 'video_id' => $v['id']['videoId'],
                 'title' => $v['snippet']['title'],
                 'published' => $this->youtubeDateFormat($v['snippet']['publishedAt'])
-            );
+            ];
         }
         return $arr;
     }
@@ -305,12 +305,12 @@ class YTAPI
         $this->verifyChannelPlaylistsDataSet();
         $arr = array();
         foreach ($this->channel_playlist_data['items'] as $pl) {
-            $arr[] = array(
+            $arr[] = [
                 'playlist_id' => $pl['id'],
                 'title' => $pl['snippet']['title'],
                 'published' => $this->youtubeDateFormat($pl['snippet']['publishedAt']),
                 'videos' => $pl['contentDetails']['itemCount']
-            );
+            ];
         }
         return $arr;
     }
@@ -325,14 +325,14 @@ class YTAPI
     public function playlistsQuickLookArray(): array
     {
         $this->verifyPlaylistDataSet();
-        $arr = array();
+        $arr = [];
         foreach ($this->playlist_data['items'] as $pl) {
-            $arr[] = array(
+            $arr[] = [
                 'video_id' => $pl['contentDetails']['videoId'],
                 'title' => $pl['snippet']['title'],
                 'position' => $pl['snippet']['position'],
                 'published' => $this->youtubeDateFormat($pl['snippet']['publishedAt']),
-            );
+            ];
         }
         return $arr;
     }
